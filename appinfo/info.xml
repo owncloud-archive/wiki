@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>picocmsapp</id>
+    <name>Pico Cms App</name>
+    <description>My first app</description>
+    <licence>AGPL</licence>
+    <author>Jan Müller</author>
+    <version>0.0.1</version>
+    <namespace>PicoCmsApp</namespace>
+    <category>other</category>
+    <dependencies>
+        <owncloud min-version="8" />
+    </dependencies>
+</info>
