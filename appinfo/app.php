@@ -12,7 +12,7 @@ namespace OCA\wiki\AppInfo;
 
 //$app = new Application();
 
-$l = \OC::$server->getL10N('wiki');
+
 
 \OC::$server->getNavigationManager()->add(array(
 
@@ -32,5 +32,5 @@ $l = \OC::$server->getL10N('wiki');
 
 	// the title of your application. This will be used in the
 	// navigation or on the settings page of your app
-	'name' => $l->t('wiki')
+	'name' => \OC::$server->getL10N('wiki')->t('wiki')
 ));
