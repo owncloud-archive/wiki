@@ -1,5 +1,5 @@
 /**
- * ownCloud - picocmsapp
+ * ownCloud - WikiApp
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -11,7 +11,7 @@
 (function ($, OC) {
 
 	var updateList = function(){
-		var url = OC.generateUrl('/apps/picocmsapp/projects');
+		var url = OC.generateUrl('/apps/WikiApp/projects');
 		$.get(url).success(function(response){
 			$.each(response, function(k, projectName){
 				$('#project-list').append("<li>"+ projectName +"</li>");
@@ -23,7 +23,7 @@
 		updateList();
 
 		$('#create').click(function () {
-			var url = OC.generateUrl('/apps/picocmsapp/projects');
+			var url = OC.generateUrl('/apps/WikiApp/projects');
 			var data = {
 				project: $('#project-name').val()
 			};

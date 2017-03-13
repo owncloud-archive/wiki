@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - picocmsapp
+ * ownCloud - WikiApp
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -9,7 +9,7 @@
  * @copyright Jan Müller 2015
  */
 
- namespace OCA\PicoCmsApp\Controller;
+ namespace OCA\WikiApp\Controller;
 
  use OCP\IRequest;
  use OCP\AppFramework\Http\TemplateResponse;

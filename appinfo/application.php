@@ -1,16 +1,16 @@
 <?php
-namespace OCA\PicoCmsApp\AppInfo;
+namespace OCA\WikiApp\AppInfo;
 
 use \OCP\AppFramework\App;
 use OCP\AppFramework\Controller;
-use OCA\PicoCmsApp\Controller\ProjectController;
+use OCA\WikiApp\Controller\ProjectController;
 
 class Application extends App
 {
 
     public function __construct(array $urlParams = array())
     {
-        parent::__construct('picocmsapp', $urlParams);
+        parent::__construct('WikiApp', $urlParams);
 
         $container = $this->getContainer();
 

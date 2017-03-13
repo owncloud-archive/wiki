@@ -5,7 +5,7 @@ $pico_projects = "Pico Projects";
 
 $owncloud_path = realpath(dirname("__FILE__")) . "/";
 $project_path = $owncloud_path . "data/" . $user . "/files/" . $pico_projects . "/" . $project . "/";
-$app_path = $owncloud_path . "apps/picocmsapp/";
+$app_path = $owncloud_path . "apps/WikiApp/";
 $pico_path = $app_path ."lib/pico/";
 
 //echo $owncloud_path;

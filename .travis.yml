@@ -30,12 +30,12 @@ install:
   - ocdev setup core --dir owncloud --branch $BRANCH --no-history
   - cd owncloud
   - ocdev ci $DB
-  # enable picocmsapp
-  - mv ../picocmsapp apps/
-  - php -f console.php app:enable picocmsapp
+  # enable WikiApp
+  - mv ../WikiApp apps/
+  - php -f console.php app:enable WikiApp
 
 before_script:
-  - cd apps/picocmsapp
+  - cd apps/WikiApp
 
 script:
   - phpunit -c phpunit.xml
