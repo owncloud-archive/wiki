@@ -1,6 +1,6 @@
 <?php
-script('WikiApp', 'script');
-style('WikiApp', 'style');
+script('wiki', 'script');
+style('wiki', 'style');
 ?>
 
 

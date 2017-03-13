@@ -30,12 +30,12 @@ install:
   - ocdev setup core --dir owncloud --branch $BRANCH --no-history
   - cd owncloud
   - ocdev ci $DB
-  # enable WikiApp
-  - mv ../WikiApp apps/
-  - php -f console.php app:enable WikiApp
+  # enable wiki
+  - mv ../wiki apps/
+  - php -f console.php app:enable wiki
 
 before_script:
-  - cd apps/WikiApp
+  - cd apps/wiki
 
 script:
   - phpunit -c phpunit.xml

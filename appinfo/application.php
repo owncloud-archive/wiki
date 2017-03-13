@@ -1,16 +1,16 @@
 <?php
-namespace OCA\WikiApp\AppInfo;
+namespace OCA\wiki\AppInfo;
 
 use \OCP\AppFramework\App;
 use OCP\AppFramework\Controller;
-use OCA\WikiApp\Controller\ProjectController;
+use OCA\wiki\Controller\ProjectController;
 
 class Application extends App
 {
 
     public function __construct(array $urlParams = array())
     {
-        parent::__construct('WikiApp', $urlParams);
+        parent::__construct('wiki', $urlParams);
 
         $container = $this->getContainer();
 

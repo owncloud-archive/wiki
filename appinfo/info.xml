@@ -6,7 +6,7 @@
     <licence>AGPL</licence>
     <author>Jan Müller</author>
     <version>0.0.1</version>
-    <namespace>WikiApp</namespace>
+    <namespace>wiki</namespace>
     <category>other</category>
     <dependencies>
         <owncloud min-version="9" max-version="11" />

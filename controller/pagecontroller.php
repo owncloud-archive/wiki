@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - WikiApp
+ * ownCloud - wiki
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -9,7 +9,7 @@
  * @copyright Jan Müller 2015
  */
 
-namespace OCA\WikiApp\Controller;
+namespace OCA\wiki\Controller;
 
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
@@ -38,7 +38,7 @@ class PageController extends Controller {
 	 */
 	public function index() {
 		//$params = ['user' => $this->userId];
-		return new TemplateResponse('WikiApp', 'main');  // templates/main.php
+		return new TemplateResponse('wiki', 'main');  // templates/main.php
 
 	}
 
