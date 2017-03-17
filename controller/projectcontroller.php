@@ -15,18 +15,21 @@
  use OCP\AppFramework\Http\TemplateResponse;
  use OCP\AppFramework\Http\DataResponse;
  use OCP\AppFramework\Controller;
+ use \OCP\Files\Node;
+ use \OCP\IL10N;
 
  class ProjectController extends Controller {
-   private $user;
+
+   private $userID;
 
    private $userStorage;
 
    private $picoProjectRoot;
 
 
-   public function __construct($AppName, IRequest $request, $user, $userStorage){
+   public function __construct($AppName, IRequest $request, $userID, $userStorage){
      parent::__construct($AppName, $request);
-     $this->user = $user;
+     $this->user = $userID;
      $this->userStorage = $userStorage;
      $picoDir = "Pico Projects";
      if (!$this->userStorage->nodeExists($picoDir)) {
@@ -46,14 +49,16 @@
      }, $folder);
    }
 
-   public function create() {
-     # create project
-
+   public function create () {     
+     
+     # create project   
      # move pico template to user file root and name it like project
+     
      #return project name
-     return "Hallo";
+     return 'hallo';
    }
 
+    #check for updated theme 
    public function update() {
 
    }

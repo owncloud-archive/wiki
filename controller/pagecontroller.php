@@ -16,6 +16,7 @@ use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
 
+
 class PageController extends Controller {
 
 
@@ -45,6 +46,7 @@ class PageController extends Controller {
 	/**
 	 * Simply method that posts back the payload of the request
 	 * @NoAdminRequired
+	 * @NoCSRFRequired
 	 */
 	public function doEcho($echo) {
 		return new DataResponse(['echo' => $echo]);
