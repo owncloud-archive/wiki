@@ -49,12 +49,14 @@
      }, $folder);
    }
 
-   public function create () {     
-     
-     # create project   
+   public function create ($title) {
+
+     # create project
+
      # move pico template to user file root and name it like project
-     
-     #return project name
+
+
+#return project name
      return 'hallo';
    }
 

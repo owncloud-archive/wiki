@@ -216,7 +216,7 @@ class Pico
 
     public function __construct($rootDir, $configDir, $pluginsDir, $themesDir)
     {
-        $this->rootDir = rtrim($rootDir, '/\\') . '/';
+        $this->rootDir = rtrim($rootDir, '/ \\') . '/';
         $this->configDir = $this->getAbsolutePath($configDir);
         $this->pluginsDir = $this->getAbsolutePath($pluginsDir);
         $this->themesDir = $this->getAbsolutePath($themesDir);
