@@ -51,8 +51,8 @@ $pico = new Pico(
     'plugins/', // plugins dir
     'themes/'   // themes dir
 );
-
 // override configuration?
 //$pico->setConfig(array());
 // run application
 echo $pico->run();
+echo "is pico running?";

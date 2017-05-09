@@ -12,8 +12,10 @@
 
 	var updateList = function(){
 		var url = OC.generateUrl('/apps/wiki/projects');
-		$.get(url).success(function(response){
-			$.each(response, function(k, projectName){
+
+		$.get(url).success(function(response) {
+
+		    $.each(response, function(projectName){
 				$('#project-list').append("<li>"+ projectName +"</li>");
 			});
 		})
@@ -23,12 +25,13 @@
 		updateList();
 
 		$('#create').click(function () {
-			var url = OC.generateUrl('/apps/wiki/projects');
+			var url = OC.generateUrl('/apps/wiki/create/'+ $('#project-name').val());
 			var data = {
 				project: $('#project-name').val()
 			};
+
 			$.post(url, data).success(function (response) {
-				$('#project-list').append("<li>"+ response +"</li>");
+                $('#project-list').append("<li>"+ response +"</li>");
 			});
 
 		});

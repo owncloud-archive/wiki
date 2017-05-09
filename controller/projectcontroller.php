@@ -26,12 +26,18 @@
 
    private $picoProjectRoot;
 
+   private $appStorage;
 
-   public function __construct($AppName, IRequest $request, $userID, $userStorage){
+   #creates Pico Projects Folder
+
+   public function __construct($AppName, IRequest $request, $userID, $userStorage ,$appStorage){
      parent::__construct($AppName, $request);
+
      $this->user = $userID;
      $this->userStorage = $userStorage;
      $picoDir = "Pico Projects";
+
+
      if (!$this->userStorage->nodeExists($picoDir)) {
        $this->userStorage->newFolder($picoDir);
      }
@@ -44,22 +50,31 @@
    public function index() {
      $folder = $this->picoProjectRoot->getDirectoryListing();
      # return array of all projects
+
      return array_map(function($node){
        return $node->getName();
      }, $folder);
    }
 
-   public function create ($title) {
+     # create project HERE IS A LOT of WORK!
 
-     # create project
+     public function create ($name) {
 
-     # move pico template to user file root and name it like project
+       
+
+       #return $projectname;
+         return "You successfully created a new pico Project! Your Project Name is ". $name;
+
+     }
+     ## move pico template to user file root and name it like
 
 
-#return project name
-     return 'hallo';
+
+
+
+
    }
-
+/*
     #check for updated theme 
    public function update() {
 
@@ -73,3 +88,4 @@
 
 
  }
+*/

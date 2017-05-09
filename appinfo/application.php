@@ -31,5 +31,6 @@ class Application extends App
           return $c->query('ServerContainer')->getUserSession()->getUser();
         });
 
+
     }
 }

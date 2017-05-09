@@ -22,11 +22,11 @@
 
 return [
     'routes' => [
-	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
-	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
-     ['name' => 'project#create', 'url' => '/projects', 'verb' => 'POST'],
-     ['name' => 'project#index', 'url' => '/projects', 'verb' => 'GET'],
-     ['name' => 'project#update', 'url' => '/projects/{id}', 'verb' => 'PUT'],
-     ['name' => 'project#destroy', 'url' => '/projects/{id}', 'verb' => 'DELETE'],
+        ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
+        ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
+        ['name' => 'project#create', 'url' => '/create/{name}', 'verb' => 'POST'],
+        ['name' => 'project#index', 'url' => '/projects', 'verb' => 'GET'],
+        ['name' => 'project#update', 'url' => '/projects/{id}', 'verb' => 'PUT'],
+        ['name' => 'project#destroy', 'url' => '/projects/{id}', 'verb' => 'DELETE'],
     ]
 ];
