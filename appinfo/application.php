@@ -19,12 +19,12 @@ class Application extends App
               $c->query('AppName'),
               $c->query('Request'),
               $c->query('User'),
-              $c->query('UserStorage')
+              $c->query('RootStorage')
             );
         });
 
-        $container->registerService('UserStorage', function($c) {
-            return $c->query('ServerContainer')->getUserFolder();
+        $container->registerService('RootStorage', function($c) {
+            return $c->query('ServerContainer')->getRootFolder();
         });
 
         $container->registerService('User', function ($c) {

@@ -11,6 +11,8 @@
 
  namespace OCA\wiki\Controller;
 
+ use OC\Files\Filesystem;
+ use OCP\Files\External\Service\IUserStoragesService;
  use OCP\IRequest;
  use OCP\AppFramework\Http\TemplateResponse;
  use OCP\AppFramework\Http\DataResponse;
@@ -22,7 +24,7 @@
 
    private $userID;
 
-   private $userStorage;
+   private $rootStorage;
 
    private $picoProjectRoot;
 
@@ -30,45 +32,55 @@
 
    #creates Pico Projects Folder
 
-   public function __construct($AppName, IRequest $request, $userID, $userStorage ,$appStorage){
+   public function __construct($AppName, IRequest $request, $user, $rootStorage ){
+
      parent::__construct($AppName, $request);
 
-     $this->user = $userID;
-     $this->userStorage = $userStorage;
+     $this->user = $user;
+     $this->rootStorage = $rootStorage;
      $picoDir = "Pico Projects";
+     \OC_Util::setupFS($this->user->getUID());
 
+     if (!$this->rootStorage->nodeExists($picoDir)) {
+       $this->rootStorage->newFolder($picoDir);
+     }
+     if (!$this->rootStorage->get($picoDir)->getType()===\OCP\Files\FileInfo::TYPE_FOLDER) {
+       $this->rootStorage->newFolder($picoDir);
+     }
 
-     if (!$this->userStorage->nodeExists($picoDir)) {
-       $this->userStorage->newFolder($picoDir);
-     }
-     if (!$this->userStorage->get($picoDir)->getType()===\OCP\Files\FileInfo::TYPE_FOLDER) {
-       $this->userStorage->newFolder($picoDir);
-     }
-     $this->picoProjectRoot = $this->userStorage->get($picoDir);
+       //$this->rootStorage->copy($this->appName.'/themes/',
+           \OC::$server->getLogger()->info($this->rootStorage->getUserFolder($this->user->getUID())->getRelativePath($picoDir));
+        \OC::$server->getLogger()->info("picodir is" $picoDir);
+       //die ($this->rootStorage->getUserFolder($this->user->getUID())->getRelativePath($picoDir));
    }
 
    public function index() {
-     $folder = $this->picoProjectRoot->getDirectoryListing();
-     # return array of all projects
 
-     return array_map(function($node){
-       return $node->getName();
-     }, $folder);
-   }
+
+     }
+
 
      # create project HERE IS A LOT of WORK!
 
      public function create ($name) {
 
-       
+
+
 
        #return $projectname;
-         return "You successfully created a new pico Project! Your Project Name is ". $name;
-
+         return "You just created a new Pico Project! Your Project Name is ". $name;
      }
      ## move pico template to user file root and name it like
 
 
+
+
+
+
+    /*$pathPicothemes = "../themes";
+     $pathrootStorage
+     public function copy($ pathPicothemes, $pathUserStorage);
+*/
 
 
 
