@@ -1,17 +1,29 @@
-# Pico Cms App
-Place this app in **owncloud/apps/**
+# Wiki App
 
-## Publish to App Store
+This is an integration of pico-cms in ownCloud.
 
-First get an account for the [App Store](http://apps.owncloud.com/) then run:
+## Description
 
-    make appstore
+Idea is to use a flatfile cms like PicoCMS, and integrate this with ownCloud.
+You can edit the content of a public site via markdown files in ownCloud.
+The functional set of markdown provides a wiki-like page.
 
-**ocdev** will ask for your App Store credentials and save them to ~/.ocdevrc which is created afterwards for reuse.
+The admin group has access to configurations, content and layout folders.
+- The content folder can be shared with a group of editors via ownCloud.
+- The layout of the page can be shared with a group of front end developers.
 
-If the <ocsid> field in **appinfo/info.xml** is not present, a new app will be created on the appstore instead of updated. You can look up the ocsid in the app page URL, e.g.: **http://apps.owncloud.com/content/show.php/News?content=168040** would use the ocsid **168040**
+The wiki page is availabe under an app route
+- access with/without authentication optional
+- a subdomain or custom path can be configured for the page (apache config)
 
-## Running tests
-After [Installing PHPUnit](http://phpunit.de/getting-started.html) run:
+## Use cases
+- company wiki for a basic knowledge base
+- help pages for ownCloud usage and faq
+- very easy website development environment
 
-    phpunit -c phpunit.xml
+## Stauts
+The development status for the wiki app is a prototype.
+
+## Referneces:
+- PicoCMS: http://picocms.org/
+
