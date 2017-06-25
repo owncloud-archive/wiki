@@ -1,6 +1,6 @@
 <?php
-script('picocmsapp', 'script');
-style('picocmsapp', 'style');
+script('wiki', 'script');
+style('wiki', 'style');
 ?>
 
 
